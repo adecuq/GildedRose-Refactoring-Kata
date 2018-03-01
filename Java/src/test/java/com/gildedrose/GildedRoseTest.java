@@ -1,8 +1,8 @@
 package com.gildedrose;
 
-import org.junit.Test;
+import static org.junit.Assert.assertEquals;
 
-import static org.junit.Assert.*;
+import org.junit.Test;
 
 public class GildedRoseTest {
 
@@ -92,16 +92,16 @@ public class GildedRoseTest {
 
     @Test
     public void quality_should_decrease_by_one_when_Conjured_and_sellin_greater_than_0() {
-        GildedRose app = updateQuality("Conjured", 1, 2);
+        GildedRose app = updateQuality("Conjured", 1, 3);
 
-        assertEquals(0, app.items[0].quality);
+        assertEquals(2, app.items[0].quality);
     }
 
     @Test
     public void quality_should_decrease_by_two_when_Conjured_and_sellin_less_or_equal_to_0() {
-        GildedRose app = updateQuality("Conjured", 0, 2);
+        GildedRose app = updateQuality("Conjured", 0, 3);
 
-        assertEquals(0, app.items[0].quality);
+        assertEquals(1, app.items[0].quality);
     }
 
     @Test
